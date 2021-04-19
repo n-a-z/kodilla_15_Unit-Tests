@@ -1,5 +1,5 @@
 import React from 'react';
-import {shallow} from 'enzyme';
+import { shallow } from 'enzyme';
 import Hero from './Hero';
 
 describe('Component Hero', () => {
@@ -8,7 +8,15 @@ describe('Component Hero', () => {
     expect(component).toBeTruthy();
   });
 
-    it('should throw error without required props', () => {
+  it('should throw error without required props', () => {
     expect(() => shallow(<Hero />)).toThrow();
+  });
+
+  it('should render correct title', () => {
+    const expectedTitle = 'Lorem ipsum';
+    const component = shallow(<Hero titleText={expectedTitle} />);
+
+    const renderedTitle = component.find('.title').text();
+    expect(renderedTitle).toEqual(expectedTitle);
   });
 });
