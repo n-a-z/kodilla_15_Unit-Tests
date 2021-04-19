@@ -1,0 +1,20 @@
+@import '../src/styles/settings.scss';
+
+.switchWrapper {
+    position: relative;
+
+    @keyframes toTop {
+      0% {top: 200px;}
+      100% {top: 0;}
+    }
+
+    > :first-child ~ * {
+      position: absolute;
+      top: 0;
+      animation: move .5s;
+      left: 0;
+      width: 100%;
+      animation-name: toTop;
+      animation-duration: .7s;
+    }
+  }
