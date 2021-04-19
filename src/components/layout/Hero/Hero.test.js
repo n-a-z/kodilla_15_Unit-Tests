@@ -5,7 +5,7 @@ import Hero from './Hero';
 describe('Component Hero', () => {
   it('should render without crashing', () => {
     const component = shallow(
-      <Hero titleText='Lorem ipsum' imageSrc='anyText' />
+      <Hero titleText="Lorem ipsum" imageSrc="anyText" />
     );
     expect(component).toBeTruthy();
     console.log(component.debug());
@@ -27,7 +27,7 @@ describe('Component Hero', () => {
   it('renders correct classNames', () => {
     const mockVariants = 'small dummy';
     const component = shallow(
-      <Hero titleText='Lorem' imageSrc='image.jpg' variant={mockVariants} />
+      <Hero titleText="Lorem" imageSrc="image.jpg" variant={mockVariants} />
     );
     expect(component.hasClass('component')).toBe(true);
     expect(component.hasClass('small')).toBe(true);
