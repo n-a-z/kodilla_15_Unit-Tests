@@ -45,4 +45,12 @@ describe('Component TripSummary', () => {
       `from ${expectedPropsCost}`
     );
   });
+
+  it('should throw an error without required props', () => {
+    expect(() => <TripSummary />).toThrow();
+    expect(() => <TripSummary id='id' />).toThrow();
+    expect(() => <TripSummary id='id' name='name' />).toThrow();
+    expect(() => <TripSummary id='id' name='name' cost='cost' />).toThrow();
+    expect(() => <TripSummary id='id' name='name' cost='cost' days={1} />).toThrow();
+  });
 });
