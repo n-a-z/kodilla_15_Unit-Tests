@@ -38,6 +38,9 @@ const sendOrder = (options, tripCost, tripName, tripId, tripCountry) => {
     })
     .then(function (parsedResponse) {
       console.log('parsedResponse', parsedResponse);
+    })
+    .catch((error) => {
+      console.error('Error:', error);
     });
 };
 
