@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import OrderSummary from '../OrderSummary/OrderSummary';
 import OrderOption from '../OrderOption/OrderOption';
 import pricing from '../../../data/pricing.json';
+import Button from '../../common/Button/Button';
 
 const OrderForm = ({ options, tripCost, setOrderOption }) => (
   <Row>
@@ -19,6 +20,13 @@ const OrderForm = ({ options, tripCost, setOrderOption }) => (
     ))}
     <Col xs={12}>
       <OrderSummary tripCost={tripCost} options={options} />
+      <Button
+        onClick={() =>
+          sendOrder(options, tripCost, tripName, tripId, tripCountry)
+        }
+      >
+        Order now!
+      </Button>
     </Col>
   </Row>
 );
