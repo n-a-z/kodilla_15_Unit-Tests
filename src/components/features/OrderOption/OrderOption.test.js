@@ -40,6 +40,14 @@ for (let type in optionTypes) {
   describe(`Component OrderOption with type=${type}`, () => {
     /* test setup */
     let component;
+    let subcomponent;
+    let renderedSubcomponent;
+
+    beforeEach(() => {
+      component = shallow(<OrderOption type={type} />);
+      subcomponent = component.find(optionTypes[type]);
+      renderedSubcomponent = subcomponent.dive();
+    });
 
     beforeEach(() => {
       component = shallow(<OrderOption type={type} />);
