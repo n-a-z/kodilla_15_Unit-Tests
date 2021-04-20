@@ -62,8 +62,10 @@ const OrderForm = ({
     <Col xs={12}>
       <OrderSummary tripCost={tripCost} options={options} />
       <Button
-        onClick={() =>
-          sendOrder(options, tripCost, tripName, tripId, tripCountry)
+        onClick={
+          options.name && options.contact
+            ? () => sendOrder(options, tripCost, tripId, tripName, tripCountry)
+            : () => alert('Please complete name and contact')
         }
       >
         Order now!
